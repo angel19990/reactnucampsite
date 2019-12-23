@@ -33,8 +33,7 @@ class Contact extends Component {
     }
 
     handleSubmit(values) {
-        console.log('Current State is: ' + JSON.stringify(values));
-        alert('Current State is: ' + JSON.stringify(values));
+        this.props.postFeedback(values);
         this.props.resetFeedbackForm();
     }
 
@@ -133,7 +132,7 @@ class Contact extends Component {
                                         className="form-control"
                                         validators={{
                                             required, 
-                                            minLength: minLength(2),
+                                            minLength: minLength(10),
                                             maxLength: maxLength(15),
                                             isNumber
                                         }}
